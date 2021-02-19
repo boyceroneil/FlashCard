@@ -1,0 +1,11 @@
+#table{
+    margin-left: 680px;
+    align-content: center;
+}
+.welcome{
+    margin-top:-25px;
+    text-align: center;
+    align-content: center;
+    background-color: lightblue;
+    height: 49vw;
+}
