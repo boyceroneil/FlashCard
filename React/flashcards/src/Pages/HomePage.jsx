@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class HomePage extends Component{
     render() {
         return(
-            <div className = "home">
-                <h1>HOME PAGE</h1>
+            <div className = "page">
+                
+                <h1>WELCOME, USER</h1>
+                <button className = "logoutButton">logout</button>
+                <table id ='homeTable'>
+                    <tr>
+                        <Link to = "viewCard"><button className = 'button1'>VIEW CARDS</button></Link>
+                        <Link to = "createCard"><button className = 'button1'>CREATE CARDS</button></Link>
+                    </tr>
+                </table>
             </div>
+           
         )
     }
 }
