@@ -1,11 +1,24 @@
-#table{
+#welcomeTable{
     margin-left: 680px;
     align-content: center;
 }
-.welcome{
+.page{
     margin-top:-25px;
     text-align: center;
     align-content: center;
     background-color: lightblue;
     height: 49vw;
+}
+.button1{
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: rgb(11, 14, 51);
+    border-style: solid;
+    background-color: rgb(179, 112, 243);
+    font-size: 50px;
+}
+#homeTable{
+    margin-left: 550px;
 }
