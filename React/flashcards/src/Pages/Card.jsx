@@ -16,14 +16,17 @@ class Card extends Component{
     render() {
         return(
             <div>
-                <h1>Card</h1>
-                <table id ='homeTable'>
+                <table id ='cardTable'>
                     <tr>
                         <td><div className = 'button1'>QUESTION</div></td>
                         <td><div className = 'button1' style={{visibility: this.state.showAnswer}}>ANSWER</div></td>
                     </tr>
+                    <tr>
+                        <td> <button id ="showAnswer "onClick = {this.clickAnswer}>show answer</button></td>
+                        <td> <button>next card</button></td>
+                    </tr>
                 </table>
-                <button id ="showAnswer "onClick = {this.clickAnswer}>show answer</button>
+               
             </div>
         )
     }

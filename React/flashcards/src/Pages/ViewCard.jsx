@@ -5,8 +5,9 @@ class ViewCard extends Component{
     render() {
         return(
             <div className = "page">
-                <h1>CARD PAGE</h1>
+                <button>home</button>
                 <Card/>
+                
             </div>
         )
     }

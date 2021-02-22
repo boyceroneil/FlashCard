@@ -5,7 +5,9 @@ class HomePage extends Component{
     render() {
         return(
             <div className = "page">
+                
                 <h1>WELCOME, USER</h1>
+                <button className = "logoutButton">logout</button>
                 <table id ='homeTable'>
                     <tr>
                         <Link to = "viewCard"><button className = 'button1'>VIEW CARDS</button></Link>
@@ -13,6 +15,7 @@ class HomePage extends Component{
                     </tr>
                 </table>
             </div>
+           
         )
     }
 }

@@ -12,7 +12,7 @@ class WelcomePage extends Component{
                         <td><h3>username:</h3></td>
                         <td><input type = "text" name = "username" placeholder = "username"/></td>
                         <td><h3>password:</h3></td>
-                        <td><input type = "text" name = "password" placeholder = "password"/></td>
+                        <td><input type = "password" name = "password" placeholder = "password"/></td>
                         <td><Link to="/home"><button>submit</button></Link></td>
                     </tr>
                     <tr>

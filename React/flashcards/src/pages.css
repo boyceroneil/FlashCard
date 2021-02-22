@@ -2,6 +2,10 @@
     margin-left: 680px;
     align-content: center;
 }
+#cardInputTable{
+    margin-left: 760px;
+    align-content: center;
+}
 .page{
     margin-top:-25px;
     text-align: center;
@@ -21,4 +25,18 @@
 }
 #homeTable{
     margin-left: 550px;
+}
+#cardTable{
+    margin-top: 100px;
+    margin-left: 500px;
+    align-content: center;
+}
+.cardInput
+{
+    resize: none;
+    height: 200px;
+    width: 200px;
+}
+.logoutButton{
+    width: 100px;
 }
