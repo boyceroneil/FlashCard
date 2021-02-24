@@ -25,6 +25,16 @@ public class FlashcardIMPL implements CRUD{
         Query<Object> query = current.createQuery("from Flashcard");
         return query.getResultList();    }
 
+
+    //testing not sure if it works
+    @Override
+    @Transactional
+    public Object randomId(){
+        Session current= manager.unwrap(Session.class);
+        Query<Object> query = current.createQuery("from Flashcard order by rand() limit 1");
+        return query.getResultList();
+    }
+
     @Override
     @Transactional
     public Object searchId(int theId) {

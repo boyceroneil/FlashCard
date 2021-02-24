@@ -27,6 +27,13 @@ public class FlashcardController {
         return crud.searchId(flashcard);
 
     }
+
+    //not tested
+    @GetMapping("/retrieveRandomFlashcard")
+    public Object retrieveRandomFlashcard(){
+        return crud.randomId();
+    }
+
     @PostMapping("/registerFlashcard")
     public Flashcard registerFlashcard(@RequestBody Flashcard flashcard){
         flashcard.setId(0);

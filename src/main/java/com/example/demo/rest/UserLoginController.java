@@ -27,6 +27,11 @@ public class UserLoginController {
         return crud.searchId(userLogin);
 
     }
+    //not tested
+    @GetMapping("/retrieveRandomUserLogin")
+    public Object retrieveRandomFlashcard(){
+        return crud.randomId();
+    }
 
     @PostMapping("/registerUserLogin")
     public UserLogin registerUserLogin(@RequestBody UserLogin userLogin){
