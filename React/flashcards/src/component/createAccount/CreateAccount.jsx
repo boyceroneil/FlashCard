@@ -35,6 +35,11 @@ class CreateAccount extends Component{
                     <form onSubmit={this.handleSubmit}>
                         
                         <div>
+                        <div>
+                        <label>Id:</label>
+                            <input className="form-control" type="text" value={this.state.id} disabled></input>
+                        </div>
+
                         <label>username</label>
                 <input type="text" name="username" onChange={this.handleChange}></input>
                         </div>

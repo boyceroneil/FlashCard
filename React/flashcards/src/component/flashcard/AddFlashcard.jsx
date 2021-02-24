@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import FlashCardDataService from '../../service/FlashCardDataService'
+import { Formik, Form, Field } from 'formik'
 
 class AddFlashcard extends Component{
     constructor(props){
@@ -26,20 +27,37 @@ class AddFlashcard extends Component{
             answer: this.state.answer
         }
         FlashCardDataService.registerFlashcard(flashcard)
-        .then(this.props.history.push('/'))
+        .then(this.props.history.push('/RegisterFlashCard'))
     }
-    handleUpdate(){
-    let flashcard ={
-    id: this.state.id,
-    question: this.state.question,
-    answer: this.state.answer
-    }
-    FlashCardDataService.updateFlashCard(flashcard).then()
-    }
-    handleDelete(){
-        FlashCardDataService.deleteFlashcard(flashcard).then()
-    }
+  
     render(){
+        let {id, question, answer} = this.state
+        return(
+            <div>
+                <Formik
+                initialValues ={{id,question,answer}}
+                handleSubmit={this.handleSubmit}
+                enableReinitialize ={true} >
+                    {(props)=>(
+                        <Form>
+                            <fieldset>
+                                <label>Id: </label>
+                                <Field type="text" disabled/>
+                            </fieldset>
+                            <fieldset>
+                                <label>question: </label>
+                                <Field type="text" onChange={this.handleChange} />
+                            </fieldset>
+                            <fieldset>
+                                <label>answer: </label>
+                                <Field type="text" onChange={this.handleChange}/>
+                            </fieldset>
+                            <button type="submit"> Submit</button>
+                        </Form>
+                    )}
+                </Formik>
+            </div>
+        )
 
     }
 }

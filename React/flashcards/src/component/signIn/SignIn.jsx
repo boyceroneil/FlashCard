@@ -23,7 +23,7 @@ class SignIn extends Component{
             username: this.state.username,
             password: this.state.password
         }
-        AccountDataServices.retrieveAccount(account).then(this.props.history.push('/'))
+        AccountDataServices.retrieveAccount(account).then(this.props.history.push('/AccountSignIn'))
     }
 
     render(){
@@ -44,7 +44,7 @@ class SignIn extends Component{
                     </div>
 
                     <div>
-                    <button type="submit">Submit</button>
+                    <button type="submit">Sign In</button>
                     </div>
                 
                 

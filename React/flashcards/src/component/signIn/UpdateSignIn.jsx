@@ -15,10 +15,10 @@ class SignInComponent extends Component{
     onSubmit(values){
         let account={
             id: this.state.id,
-            username: values.username,
+            username: this.state.username,
             password: values.password
         }
-        AccountDataServices.retrieveAccount(account).then(()=>this.props.history.push('/'))
+        AccountDataServices.retrieveAccount(account).then(()=>this.props.history.push('/UpdateAccount'))
     }
     render(){
         let{id,username,password}=this.state
