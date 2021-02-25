@@ -6,8 +6,8 @@ class CreateAccount extends Component{
         super(props)
         this.state ={
             id: this.props.match.params.id,
-            username='',
-            password=''
+            username:'',
+            password:''
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);

@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { Formik, Form, Field } from 'formik'
 import AccountDataServices from '../../service/AccountDataServices'
 
-class SignInComponent extends Component{
+class UpdateSignIn extends Component{
     constructor(props){
         super(props)
         this.state ={
@@ -18,23 +17,41 @@ class SignInComponent extends Component{
             username: this.state.username,
             password: values.password
         }
-        AccountDataServices.retrieveAccount(account).then(()=>this.props.history.push('/UpdateAccount'))
+        AccountDataServices.retrieveAccount(account).then(()=>this.props.history.push('/UpdateAccount/:id/:username'))
     }
     render(){
-        let{id,username,password}=this.state
+        
         return(
             <div>
                 <div>
-                <h3>Signing in</h3>
+                <h3>Update your account</h3>
                 </div>
-                <Formik initialValues ={{id,username,password}}
-                onSubmit={this.onSubmit}
-                enableReinitialize={true}
-                >
+                <form onSubmit={this.handleSubmit}>
+                        
+                        <div>
+                        <div>
+                        <label>Id:</label>
+                            <input className="form-control" type="text" value={this.state.id} disabled></input>
+                        </div>
 
-                </Formik>
-            </div>
+                        <label>username</label>
+                <input type="text" name="username" ></input>
+                        </div>
+
+                        <div>
+                        <label>password</label>
+                <input type="text" name="password" ></input>
+                        </div>
+
+                        <div>
+                        <button type="submit">Submit</button>
+                        </div>
+                    
+                    
+                    </form>
+                </div>
+
         )
     }
 }
-export default SignInComponent;
+export default UpdateSignIn;

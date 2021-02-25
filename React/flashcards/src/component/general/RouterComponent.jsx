@@ -7,6 +7,7 @@ import WelcomeComponent from '../general/WelcomeComponent'
 import LogOut from '../general/LogOutComponent'
 import UpdateFlashCard from '../flashcard/UpdateFlashcard'
 import UpdatesignIn from '../signIn/UpdateSignIn'
+import ListFlashcardComponent from '../flashcard/ListFlashcardComponent';
 class RouterComponent extends Component{
     render(){
         return(
@@ -19,6 +20,7 @@ class RouterComponent extends Component{
                         <Route path = '/UpdateAccount/:id' component={UpdatesignIn} />
                         <Route path='/RegisterFlashCard/:id/:question/:answer' component = {UpdateFlashCard}/>
                         <Route path='/RegisterFlashCard' component = {flashcard}/>
+                        <Route path='/ListOfFlashCard' component = {ListFlashcardComponent}/>
                         <Route path='/LogOut' component={LogOut}/>
                     </Switch>
                 </Router>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Formik, Form, Field } from 'formik'
 import FlashCardDataService from '../../service/FlashCardDataService'
 
 class UpdateFlashCard extends Component{
@@ -18,36 +17,37 @@ class UpdateFlashCard extends Component{
             question: values.question,
             answer: values.answer
         }
-        FlashCardDataService.updateFlashCard(flashcard).then(()=> this.props.history.push('/RegisterFlashCard'))
+        FlashCardDataService.updateFlashCard(flashcard).then(()=> this.props.history.push('/RegisterFlashCard/:id/:question/:answer'))
     }
 
     render(){
-        let {id, question, answer} = this.state
         return(
             <div>
-                <Formik
-                initialValues ={{id,question,answer}}
-                onSubmit={this.onSubmit}
-                enableReinitialize ={true} >
-                    {(props)=>(
-                        <Form>
-                            <fieldset>
-                                <label>Id</label>
-                                <Field type="text" disabled/>
-                            </fieldset>
-                            <fieldset>
-                                <label>question</label>
-                                <Field type="text" />
-                            </fieldset>
-                            <fieldset>
-                                <label>answer</label>
-                                <Field type="text" />
-                            </fieldset>
-                            <button type="submit"> Update</button>
-                        </Form>
-                    )}
-                </Formik>
-            </div>
+                <form onSubmit={this.handleSubmit}>
+                        
+                        <div>
+                        <div>
+                        <label>Id:</label>
+                            <input className="form-control" type="text" value={this.state.id} disabled></input>
+                        </div>
+
+                        <label>question</label>
+                <input type="text" name="question" onChange={this.handleChange}></input>
+                        </div>
+
+                        <div>
+                        <label>answer</label>
+                <input type="text" name="answer" onChange={this.handleChange}></input>
+                        </div>
+
+                        <div>
+                        <button type="submit">Submit</button>
+                        </div>
+                    
+                    
+                    </form>
+                </div>
+
         )
     }
 }

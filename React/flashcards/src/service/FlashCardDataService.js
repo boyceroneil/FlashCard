@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from 'axios'
 
 class FlashCardDataService{
     //receive all flashcards
@@ -32,4 +32,4 @@ class FlashCardDataService{
 
     }
 }
-export default FlashCardDataService()
+export default new FlashCardDataService()

@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import FlashCardDataService from '../../service/FlashCardDataService'
-import { Formik, Form, Field } from 'formik'
 
 class AddFlashcard extends Component{
     constructor(props){
@@ -11,9 +10,7 @@ class AddFlashcard extends Component{
             answer: ''
         }
         this.handleChange = this.handleChange.bind(this)
-        this.handleUpdate = this.handleUpdate.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleDelete = this.handleDelete.bind(this)
     }
     handleChange(event) {
         this.setState({
@@ -31,32 +28,33 @@ class AddFlashcard extends Component{
     }
   
     render(){
-        let {id, question, answer} = this.state
         return(
             <div>
-                <Formik
-                initialValues ={{id,question,answer}}
-                handleSubmit={this.handleSubmit}
-                enableReinitialize ={true} >
-                    {(props)=>(
-                        <Form>
-                            <fieldset>
-                                <label>Id: </label>
-                                <Field type="text" disabled/>
-                            </fieldset>
-                            <fieldset>
-                                <label>question: </label>
-                                <Field type="text" onChange={this.handleChange} />
-                            </fieldset>
-                            <fieldset>
-                                <label>answer: </label>
-                                <Field type="text" onChange={this.handleChange}/>
-                            </fieldset>
-                            <button type="submit"> Submit</button>
-                        </Form>
-                    )}
-                </Formik>
-            </div>
+              <form onSubmit={this.handleSubmit}>
+                        
+                        <div>
+                        <div>
+                        <label>Id:</label>
+                            <input className="form-control" type="text" value={this.state.id} disabled></input>
+                        </div>
+
+                        <label>question</label>
+                <input type="text" name="question" onChange={this.handleChange}></input>
+                        </div>
+
+                        <div>
+                        <label>answer</label>
+                <input type="text" name="answer" onChange={this.handleChange}></input>
+                        </div>
+
+                        <div>
+                        <button type="submit">Submit</button>
+                        </div>
+                    
+                    
+                    </form>
+                </div>
+
         )
 
     }
