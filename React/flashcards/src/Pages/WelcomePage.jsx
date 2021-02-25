@@ -11,14 +11,14 @@ class WelcomePage extends Component{
                     <tr>
                         <td><h3>username:</h3></td>
                         <td><input type = "text" name = "username" placeholder = "username"/></td>
-                        <td><h3>password:</h3></td>
-                        <td><input type = "password" name = "password" placeholder = "password"/></td>
-                        <td><Link to="/home"><button>submit</button></Link></td>
                     </tr>
                     <tr>
-                        <td><div></div></td>
-                        <td><div></div></td>
-                        <td><Link to ="/newUserPage"><button>Create Account</button></Link></td>
+                        <td><h3>password:</h3></td>
+                        <td><input type = "password" name = "password" placeholder = "password"/></td>
+                    </tr>
+                    <tr>
+                        <td><Link to="/home"><button button className= "button3">submit</button></Link></td>
+                        <td><Link to ="/newUserPage"><button className= "button4" >Create Account</button></Link></td>
                     </tr>
                 </table>
             </div>

@@ -11,8 +11,10 @@ class NewUserPage extends Component{
                     <h3>password:</h3>
                     <input type = "password" name = "password" placeholder = "password"/>
                     <br></br>
-                    <button>SUBMIT</button>
+                    
                 </form>
+                <br></br>
+                <button className= "button3">SUBMIT</button>
             </div>
         )
     }

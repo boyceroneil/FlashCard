@@ -7,7 +7,7 @@ class HomePage extends Component{
             <div className = "page">
                 
                 <h1>WELCOME, USER</h1>
-                <button className = "logoutButton">logout</button>
+                <Link to = "logout"><button className= "button2">logout</button></Link>
                 <table id ='homeTable'>
                     <tr>
                         <Link to = "viewCard"><button className = 'button1'>VIEW CARDS</button></Link>

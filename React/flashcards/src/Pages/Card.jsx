@@ -22,8 +22,8 @@ class Card extends Component{
                         <td><div className = 'button1' style={{visibility: this.state.showAnswer}}>ANSWER</div></td>
                     </tr>
                     <tr>
-                        <td> <button id ="showAnswer "onClick = {this.clickAnswer}>show answer</button></td>
-                        <td> <button>next card</button></td>
+                        <td> <button id ="showAnswer " className= "button2"onClick = {this.clickAnswer}>show answer</button></td>
+                        <td><button className= "button2">next card</button></td>
                     </tr>
                 </table>
                

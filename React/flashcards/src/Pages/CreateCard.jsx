@@ -13,10 +13,10 @@ class CreateCard extends Component{
                     <tr>
                         <td><textarea className = "cardInput"></textarea></td>
                         <td><textarea className = "cardInput"></textarea></td>
-                        <td><button>SUBMIT</button></td>
                     </tr>
+                    
                 </table>
-                
+                <button className= "button2" >SUBMIT</button>
             </div>
         )
     }

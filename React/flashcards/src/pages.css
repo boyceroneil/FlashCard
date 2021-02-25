@@ -1,5 +1,5 @@
 #welcomeTable{
-    margin-left: 680px;
+    margin-left: 750px;
     align-content: center;
 }
 #cardInputTable{
@@ -8,6 +8,12 @@
 }
 .page{
     margin-top:-25px;
+    text-align: center;
+    align-content: center;
+    background-color: lightblue;
+    height: 49vw;
+}
+.viewCardpage{
     text-align: center;
     align-content: center;
     background-color: lightblue;
@@ -23,19 +29,40 @@
     background-color: rgb(179, 112, 243);
     font-size: 50px;
 }
+
+.button2{
+    width: 400px;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+.button3{
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.button4{
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+}
 #homeTable{
     margin-left: 550px;
 }
 #cardTable{
     margin-top: 100px;
-    margin-left: 500px;
+    margin-left: 550px;
     align-content: center;
+    align-self: center;
 }
 .cardInput
 {
     resize: none;
     height: 200px;
-    width: 200px;
+    width: 190px;
 }
 .logoutButton{
     width: 100px;
