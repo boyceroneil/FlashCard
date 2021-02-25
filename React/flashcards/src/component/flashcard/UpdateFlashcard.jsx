@@ -10,6 +10,12 @@ class UpdateFlashCard extends Component{
             answer: this.props.match.params.answer
         }
         this.onSubmit = this.onSubmit.bind(this)
+        this.handleChange= this.handleChange.bind(this)
+    }
+    handleChange(event){
+        this.setState({
+            [event.target.name]: event.target.value
+        })
     }
     onSubmit(values){
         let flashcard = {
@@ -17,13 +23,38 @@ class UpdateFlashCard extends Component{
             question: values.question,
             answer: values.answer
         }
-        FlashCardDataService.updateFlashCard(flashcard).then(()=> this.props.history.push('/RegisterFlashCard/:id/:question/:answer'))
+        FlashCardDataService.updateFlashCard(flashcard).then(()=> this.props.history.push(`/RegisterFlashCard/${flashcard.id}/${this.state.question}/${this.state.answer}`))
     }
 
     render(){
+        let{id, question, answer} = this.state
         return(
             <div>
-                <form onSubmit={this.handleSubmit}>
+                {/* <Formik
+                initialValues={{id,question,answer}}
+                onSubmit={this.onSubmit}
+                enableReinitialize={true}>
+                    {
+                        (props) =>(
+                            <Form>
+                                <fieldset>
+                                <label>id</label>
+                                <Field type="text" name ="id" disabled/>
+                                </fieldset>
+                                <fieldset>
+                                <label>question</label>
+                                <Field type="text" name ="question" />
+                                </fieldset>
+                                <fieldset>
+                                <label>id</label>
+                                <Field type="text" name ="id" disabled/>
+                                </fieldset>
+                                <button type="submit"> Save changes</button>
+                            </Form>
+                        )
+                    }
+                </Formik> */}
+                <form onSubmit={this.onSubmit}>
                         
                         <div>
                         <div>
@@ -31,13 +62,13 @@ class UpdateFlashCard extends Component{
                             <input className="form-control" type="text" value={this.state.id} disabled></input>
                         </div>
 
-                        <label>question</label>
+                        <label>question:</label>
                 <input type="text" name="question" onChange={this.handleChange}></input>
                         </div>
 
                         <div>
-                        <label>answer</label>
-                <input type="text" name="answer" onChange={this.handleChange}></input>
+                        <label>answer:</label>
+                <input type="text" name="answer" onChange={this.handleChange} ></input>
                         </div>
 
                         <div>
