@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Random;
 
 @Repository
 public class FlashcardIMPL implements CRUD{
@@ -26,13 +27,16 @@ public class FlashcardIMPL implements CRUD{
         return query.getResultList();    }
 
 
-    //testing not sure if it works
+
     @Override
     @Transactional
     public Object randomId(){
         Session current= manager.unwrap(Session.class);
-        Query<Object> query = current.createQuery("from Flashcard order by rand() limit 1");
-        return query.getResultList();
+        Query<Object> query = current.createQuery("from Flashcard");
+        List list = query.list();
+        Random rand = new Random();
+        int x = rand.nextInt(list.size());
+        return list.get(x);
     }
 
     @Override
