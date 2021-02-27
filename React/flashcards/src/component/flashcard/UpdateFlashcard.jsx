@@ -17,13 +17,13 @@ class UpdateFlashCard extends Component{
             [event.target.name]: event.target.value
         })
     }
-    onSubmit(values){
+    onSubmit(){
         let flashcard = {
             id: this.state.id,
-            question: values.question,
-            answer: values.answer
+            question: this.state.question,
+            answer: this.state.answer
         }
-        FlashCardDataService.updateFlashCard(flashcard).then(()=> this.props.history.push(`/RegisterFlashCard/${flashcard.id}/${this.state.question}/${this.state.answer}`))
+        FlashCardDataService.updateFlashCard(flashcard).then(()=> this.props.history.push('/ListOfFlashCard'))
     }
 
     render(){

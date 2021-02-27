@@ -17,8 +17,8 @@ class RouterComponent extends Component{
                         <Route exact path='/'><WelcomeComponent/></Route>
                         <Route path='/AccountCreation' component={create}/>
                         <Route path='/AccountSignIn' component={signIn}/>
-                        <Route path = '/UpdateAccount/:id' component={UpdatesignIn} />
-                        <Route path='/RegisterFlashCard/:id/:question/:answer' component = {UpdateFlashCard}/>
+                        {/* <Route path = '/UpdateAccount/:id' component={UpdatesignIn} /> */}
+                        <Route path='/UpdateFlashCard/:id/:question/:answer' component = {UpdateFlashCard}/>
                         <Route path='/RegisterFlashCard' component = {flashcard}/>
                         <Route path='/ListOfFlashCard' component = {ListFlashcardComponent}/>
                         <Route path='/LogOut' component={LogOut}/>

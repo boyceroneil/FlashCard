@@ -34,7 +34,7 @@ class ListFlashcardComponent extends Component{
         )
     }
     updateFlashcard(id, question, answer){
-        this.props.history.push(`/RegisterFlashCard/${id}/${question}/${answer}`)
+        this.props.history.push(`/UpdateFlashCard/${id}/${question}/${answer}`)
     }
     addFlashcard(){
 
@@ -52,7 +52,7 @@ class ListFlashcardComponent extends Component{
                 <tbody>
                     {this.state.flashcard.map(
                         flashcard=>
-                        <tr>
+                        <tr key={flashcard.id}>
                             <td>{flashcard.id}</td>
                             <td>{flashcard.question}</td>
                             <td>{flashcard.answer}</td>
