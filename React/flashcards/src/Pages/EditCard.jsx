@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
-class CreateCard extends Component{
+class EditCard extends Component {
     render() {
         return(
-            <div className = "page">
-                <h1>CREATE A CARD!</h1>
+            
+            <div className = "editPage">
                 <Link to = "home"><button className = "button3">home</button></Link>
                 <table id = "cardInputTable">
                     <tr>
@@ -16,11 +16,18 @@ class CreateCard extends Component{
                         <td><textarea className = "cardInput"></textarea></td>
                         <td><textarea className = "cardInput"></textarea></td>
                     </tr>
-                    
+                 
                 </table>
-                <button className= "button2" >SUBMIT</button>
+                <table id = "table1">
+                    <tr>
+                        <button className= "button3" >SUBMIT</button>
+                        <button className= "button3" >NEXT CARD</button>
+                    </tr>
+                </table>
+            
             </div>
         )
     }
 }
-export default CreateCard
+
+export default EditCard

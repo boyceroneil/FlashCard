@@ -12,6 +12,7 @@ class HomePage extends Component{
                     <tr>
                         <Link to = "viewCard"><button className = 'button1'>VIEW CARDS</button></Link>
                         <Link to = "createCard"><button className = 'button1'>CREATE CARDS</button></Link>
+                        <Link to = "editCard"><button className = 'button1'>EDIT CARDS</button></Link>
                     </tr>
                 </table>
             </div>

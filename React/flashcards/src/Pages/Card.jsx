@@ -7,10 +7,17 @@ class Card extends Component{
             showAnswer:'hidden'
         }
         this.clickAnswer = this.clickAnswer.bind(this )
+        this.clickNext = this.clickNext.bind(this )
+        
     }
     clickAnswer(){
         this.setState({
             showAnswer: 'visible'
+        })
+    }
+    clickNext(){
+        this.setState({
+            showAnswer: 'hidden'
         })
     }
     render() {
@@ -23,7 +30,7 @@ class Card extends Component{
                     </tr>
                     <tr>
                         <td> <button id ="showAnswer " className= "button2"onClick = {this.clickAnswer}>show answer</button></td>
-                        <td><button className= "button2">next card</button></td>
+                        <td><button className= "button2" onClick = {this.clickNext}>next card</button></td>
                     </tr>
                 </table>
                

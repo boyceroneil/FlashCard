@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
 
 class NewUserPage extends Component{
     render() {
@@ -14,7 +15,7 @@ class NewUserPage extends Component{
                     
                 </form>
                 <br></br>
-                <button className= "button3">SUBMIT</button>
+                <Link to = "/"><button className= "button3">SUBMIT</button></Link>
             </div>
         )
     }
