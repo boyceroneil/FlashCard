@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
 
 class NewUserPage extends Component{
     render() {
@@ -11,8 +12,10 @@ class NewUserPage extends Component{
                     <h3>password:</h3>
                     <input type = "password" name = "password" placeholder = "password"/>
                     <br></br>
-                    <button>SUBMIT</button>
+                    
                 </form>
+                <br></br>
+                <Link to = "/"><button className= "button3">SUBMIT</button></Link>
             </div>
         )
     }

@@ -7,11 +7,12 @@ class HomePage extends Component{
             <div className = "page">
                 
                 <h1>WELCOME, USER</h1>
-                <button className = "logoutButton">logout</button>
+                <Link to = "logout"><button className= "button2">logout</button></Link>
                 <table id ='homeTable'>
                     <tr>
                         <Link to = "viewCard"><button className = 'button1'>VIEW CARDS</button></Link>
                         <Link to = "createCard"><button className = 'button1'>CREATE CARDS</button></Link>
+                        <Link to = "editCard"><button className = 'button1'>EDIT CARDS</button></Link>
                     </tr>
                 </table>
             </div>

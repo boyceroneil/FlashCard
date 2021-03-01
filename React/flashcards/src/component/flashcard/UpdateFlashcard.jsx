@@ -8,6 +8,7 @@ class UpdateFlashCard extends Component{
             id: this.props.match.params.id,
             question: this.props.match.params.question,
             answer: this.props.match.params.answer
+           
         }
         this.onSubmit = this.onSubmit.bind(this)
         this.handleChange= this.handleChange.bind(this)
