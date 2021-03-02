@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Link, Redirect} from 'react-router-dom'
-
+import AccountDataServices from '../service/AccountDataServices'
 class WelcomePage extends Component{
     
     constructor(props){
@@ -11,6 +11,7 @@ class WelcomePage extends Component{
         }
         this.handleChange= this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this) 
+        this.handleCreation = this.handleCreation.bind(this)
          
     }
     handleChange(event){
@@ -22,6 +23,15 @@ class WelcomePage extends Component{
         if (this.state.password == "admin" && this.state.username == "admin") {
             this.props.history.push('/home')
         }
+    }
+    handleCreation(){
+        let account ={
+            id: this.state.id,
+            username: this.state.username,
+            password: this.state.password
+        }
+        AccountDataServices.registerAccount(account).then(this.props.history.push('/home'))
+        
     }
     render() {
         return(
@@ -39,7 +49,7 @@ class WelcomePage extends Component{
                     </tr>
                     <tr>
                         <td><button button className= "button3" onClick ={this.handleSubmit}>submit</button></td>
-                        <td><Link to= "createCard"><button className= "button4" >Create Account</button></Link></td>
+                        <td><button className= "button4" onClick ={this.handleCreation}>Create Account</button></td>
                     </tr>
                 </table>
             </div>
